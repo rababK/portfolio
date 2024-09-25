@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static tailwind_tags %}
+    {% load static %}
+<head>
+    {% tailwind_css %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap" rel="stylesheet">
+<style>
+    .protest-guerrilla-regular {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sofadi-one-regular {
+  font-family: "Sofadi One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+</style>
+</head>
+<body>
+     <!-- header section -->
+     <header class="bg-rose-50 text-rose-900">
+        <nav class="block">
+            <div class=" flex justify-between items-center w-[97%] mx-auto h-20 ">
+                <div class="flex items-center justify-around w-[25%]">
+                    <img class="  w-5 h-5 lg:w-10 lg:h-10 rounded-full" src="{% static 'portfolioCode/logopic.jpg'%} ">
+                    <h1>  <label  class="protest-guerrilla-regular text-lg lg:text-2xl"> Rabab kh. </label></h1>
+                </div>
+      
+          
+                <div class="">
+                    <ul class="flex items-center gap-5 lg:gap-9 font-medium" >
+                        <li><a class="hover:text-rose-300" href="../../index/" >HOME</a></li>
+                        <li><a class="hover:text-rose-300" href=" " >PROJECTS</a></li>
+                        <li><a class="hover:text-rose-300" href="../../blog/1/" >BLOG</a></li>
+                        <li><a class="hover:text-rose-300" href="#footer" >CONTACT ME</a></li>
+                    </ul>
+    
+                </div>
+            
+              
+            </div>
+       
+       
+        </nav>
+    </header>
+    <container class=" flex justify-between  bg-white  my-5  text-rose-900">
+      
+
+  
+
+       <div class="flex flex-col items-center justify-between  w-[20%] ">
+        <div class="protest-guerrilla-regular  bg-rose-50  rounded-l-md w-full  h-full">
+            {% for project in projects %}
+            <a class=" flex px-10 py-2 mt-10 text-lg bg-red-100" href="../{{ project.id }}/"> {{project.title}} </a>
+            {%endfor%}
+        </div>
+    </div>
+    <div class=" w-[78%] bg-rose-50">
+        <div class="w-[80%] mx-auto my-10 ">
+        
+         <div class="w-[80%]  mx-auto protest-guerrilla-regular text-xl">
+         {{project.title}}
+         </div>
+         <div class="sofadi-one-regular my-5 text-lg text-stone-600">
+            {{project.about}}
+         </div>
+         <div class="flex flex-wrap justify-start protest-guerrilla-regular text-xl  text-rose-900 py-5">
+            {% for s in skills%}
+            <div class=" w-[20%]  h-10 px-2 ">{{s}}</div>
+           {%endfor%}
+
+        </div>
+         
+        </div>
+       </div>
+    </container>
+    <footer id="footer" class="bg-red-200  text-stone-800 text-lg protest-guerrilla-regular  ">
+    <div class="flex flex-wrap lg:w-[35%] w-[90%] justify-between items-center  mx-auto py-5"> 
+        <h2> Contact me </h2>   
+        <a href="https://iwtsp.com/249111792703"> <img src="{% static 'portfolioCode/whatsapp.png'%} " class="w-7 h-7 rounded"> </a>
+        <a href="https://t.me/rab6ab"> <img src="{% static 'portfolioCode/telegram.png'%} " class="w-7 h-7 rounded"> </a>
+        <a href="https://www.linkedin.com/in/rabab-khalifa/"> <img src="{% static 'portfolioCode/linkedin.png'%} " class="w-7 h-7 rounded"> </a>
+        <a href="https://github.com/rababK"> <img src="{% static 'portfolioCode/github.png'%} " class="w-7 h-7 rounded"> </a>
+
+
+
+    </div>
+    </footer>
+    
+</body>
+</html>
