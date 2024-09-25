@@ -58,4 +58,4 @@ class projectSkills(models.Model):
         return self.skill.name
     
 
-    
+

@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from . import models
+from .forms import ContactForm
+from django.http import HttpResponse
+
 # Create your views here.
 def index(request):
     basicInfo = models.basicInformation
@@ -53,4 +56,17 @@ def projectDetails(request,id):
     }
     return render(request ,"portfolioCode/projects.html",context)
 
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            pass
+            return redirect('success')
+    else:
+        form = ContactForm()
+    return render(request, 'index.html', {'form': form})
 
+
+def success(request):
+  return HttpResponse('Success!')

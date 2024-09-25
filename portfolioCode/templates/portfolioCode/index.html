@@ -165,9 +165,11 @@
             </paragraph >
             </div>
              <form class="lg:w-[40%]  py-2 mx-auto  ">
-               <input  class=" border-collapse border-2 mb-10 w-[100%] py-2 rounded px-10" placeholder="Enter your Email"><br>
-               <textarea placeholder="share me your message " class=" border-collapse rounded border-2  px-10 py-100 w-[100%] py-7 resize-none"></textarea>
-               <button class="w-[40%] p-3  rounded-2xl my-3 text-rose-900 border-pink-300 border-2  hover:bg-pink-300 hover:text-white hover:border-white  "> Send message</button> 
+                {% csrf_token %}
+               <input id="name" class=" border-collapse border-2 mb-10 w-[100%] py-2 rounded px-10" placeholder="Enter your name"><br>
+               <input id="email" class=" border-collapse border-2 mb-10 w-[100%] py-2 rounded px-10" placeholder="Enter your Email"><br>
+               <textarea id="message" placeholder="share me your message " class=" border-collapse rounded border-2  px-10 py-100 w-[100%] py-7 resize-none"></textarea>
+               <button class="w-[40%] p-3  rounded-2xl my-3 text-rose-900 border-pink-300 border-2  hover:bg-pink-300 hover:text-white hover:border-white  " type="submit"> Send message</button> 
         
            
              </form>
