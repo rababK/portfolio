@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!'django-insecure-a-_r&v8or-72#r9t)4zcldkmm-n=#yx8@9hkr3wy3^xk9!fr^o'
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG","False").lower=="true"
 
 
@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases  "postgresql://portfolio_database_drlc_user:jplc4SedwQnqCLWYNYUURpv7sT3jxtJY@dpg-crpurlbtq21c73d8dgq0-a.oregon-postgres.render.com/portfolio_database_drlc"
+# https://docs.djangoproject.com/en/4.1/ref/settings/#databases  
 
 DATABASES = {
     'default': {
