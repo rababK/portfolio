@@ -9,3 +9,4 @@ urlpatterns = [
    path("project/<int:id>/", views.projectDetails, name="project"),
   
 ]
+

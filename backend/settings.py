@@ -47,12 +47,13 @@ INSTALLED_APPS = [
     "django_browser_reload",
     "portfolioCode",
 ]
+
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 
 
-STATIC_ROOT= os.path.join(BASE_DIR,'static/')
+STATIC_ROOT= "/var/www/portfolio-sj5g.onrender.com/static/"
 
 TAILWIND_APP_NAME = 'theme'
 
