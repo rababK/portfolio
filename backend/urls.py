@@ -10,9 +10,5 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 urlpatterns += staticfiles_urlpatterns()
-urlpatterns += urlpatterns('', (
-    r'^static/(?P<path>.*)$',
-    'django.views.static.serve',
-    {'document_root': settings.STATIC_ROOT}
-))
+
 #static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
