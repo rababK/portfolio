@@ -50,10 +50,7 @@ INSTALLED_APPS = [
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    "/var/www/static/",
-]
+
 
 STATIC_ROOT= os.path.join(BASE_DIR,'static/')
 
