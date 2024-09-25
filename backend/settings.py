@@ -130,6 +130,20 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'live.smtp.mailtrap.io'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'emailsdeveloper@yourserver.com'
+EMAIL_HOST_PASSWORD = 'email4sw!'
+ADMIN_EMAIL = 'emailsdeveloper@yourserver.com'
+
+
+
+EMAIL_USE_TLS = True
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

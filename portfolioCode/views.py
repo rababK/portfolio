@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import models
 from .forms import ContactForm
 from django.http import HttpResponse
-
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 def index(request):
     basicInfo = models.basicInformation
@@ -60,8 +61,18 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            # Process the form data
-            pass
+            
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            send_mail(
+                f'From {name}, Subject: {" from client "}',
+                f'Message: {message}',
+                email,
+                [settings.ADMIN_EMAIL],  # To email
+                fail_silently=False,
+            )
             return redirect('success')
     else:
         form = ContactForm()
