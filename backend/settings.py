@@ -133,9 +133,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # settings.py
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'live.smtp.mailtrap.io'
-EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'emailsdeveloper@yourserver.com'
 EMAIL_HOST_PASSWORD = 'email4sw!'
 ADMIN_EMAIL = 'emailsdeveloper@yourserver.com'
