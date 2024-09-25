@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG","False").lower=="true"
 
 
-ALLOWED_HOSTS = ["."]
+ALLOWED_HOSTS = ["https://portfolio-sj5g.onrender.com/",]
 
 # Application definition
 
@@ -51,11 +51,12 @@ STATICFILES_DIRS = [
 ]
 
 TAILWIND_APP_NAME = 'theme'
-""""
+
 INTERNAL_IPS = [
     "127.0.0.1",
+    "https://portfolio-sj5g.onrender.com/",
 ]
- """
+
 NPM_BIN_PATH ="C:/Program Files/nodejs/npm.cmd"
 
 MIDDLEWARE = [
