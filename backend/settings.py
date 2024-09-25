@@ -104,7 +104,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-database_url=os.environ.get("DATABASE_URL")
+database_url="postgresql://portfolio_database_drlc_user:jplc4SedwQnqCLWYNYUURpv7sT3jxtJY@dpg-crpurlbtq21c73d8dgq0-a.oregon-postgres.render.com/portfolio_database_drlc"
 DATABASES["default"]=dj_database_url.parse(database_url)
 
 # Password validation
@@ -142,7 +142,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+MEDIA_URL = 'media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
