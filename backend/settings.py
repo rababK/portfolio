@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG","False").lower=="true"
 
 
-ALLOWED_HOSTS = os.environ.get("ALLOED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "tailwind",
     "theme",
     "django_browser_reload",
-    "portfolioCode"
+    "portfolioCode",
 ]
 STATIC_URL = "static/"
 
