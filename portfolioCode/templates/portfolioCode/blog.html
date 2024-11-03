@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog</title>
-    <link rel="stylesheet" href="output.css">
+    <link href="{% static 'portfolioCode/css/output.css' %}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">    
@@ -38,7 +38,8 @@
         <nav class="block">
             <div class=" flex justify-between items-center w-[97%] mx-auto h-20 ">
                 <div class="flex items-center justify-around w-[25%]">
-                    <img class="  w-5 h-5 lg:w-10 lg:h-10 rounded-full" src="{% static 'portfolioCode/logopic.jpg'%} ">
+                    <img class="  w-5 h-5 lg:w-10 lg:h-10 rounded-full" src="{% static 'portfolioCode/img/logopic.jpg'%} ">
+
                     <h1>  <label  class="protest-guerrilla-regular text-lg lg:text-2xl"> Rabab kh. </label></h1>
                 </div>
       
@@ -87,10 +88,10 @@
     <footer id="footer" class="bg-red-200  text-stone-800 text-lg protest-guerrilla-regular  ">
     <div class="flex flex-wrap lg:w-[35%] w-[90%] justify-between items-center  mx-auto py-5"> 
         <h2> Contact me </h2>   
-        <a href="https://iwtsp.com/249111792703"> <img src="{% static 'portfolioCode/whatsapp.png'%} " class="w-7 h-7 rounded"> </a>
-        <a href="https://t.me/rab6ab"> <img src="{% static 'portfolioCode/telegram.png'%} " class="w-7 h-7 rounded"> </a>
-        <a href="https://www.linkedin.com/in/rabab-khalifa/"> <img src="{% static 'portfolioCode/linkedin.png'%} " class="w-7 h-7 rounded"> </a>
-        <a href="https://github.com/rababK"> <img src="{% static 'portfolioCode/github.png'%} " class="w-7 h-7 rounded"> </a>
+        <a href="https://iwtsp.com/249111792703"> <img src="{% static 'portfolioCode/img/whatsapp.png'%} " class="w-7 h-7 rounded"> </a>
+        <a href="https://t.me/rab6ab"> <img src="{% static 'portfolioCode/img/telegram.png'%} " class="w-7 h-7 rounded"> </a>
+        <a href="https://www.linkedin.com/in/rabab-khalifa/"> <img src="{% static 'portfolioCode/img/linkedin.png'%} " class="w-7 h-7 rounded"> </a>
+        <a href="https://github.com/rababK"> <img src="{% static 'portfolioCode/img/github.png'%} " class="w-7 h-7 rounded"> </a>
 
 
 

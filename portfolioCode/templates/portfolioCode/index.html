@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     {% load static tailwind_tags %}
-    {% load static %}
+    {% load static  %}
 <head>
    
     {% tailwind_css %}
@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
-    <link rel="stylesheet" href="output.css">
+    <link href="{% static 'portfolioCode/css/output.css' %}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">    
@@ -38,7 +38,7 @@
         <nav class="block">
         <div class=" flex justify-between items-center w-[97%] mx-auto h-20 ">
             <div class="flex items-center justify-around w-[25%]"> 
-                <img class="  w-5 h-5 lg:w-10 lg:h-10 rounded-full" src="{% static 'portfolioCode/logopic.jpg'%} ">
+                <img class="  w-5 h-5 lg:w-10 lg:h-10 rounded-full" src="{% static 'portfolioCode/img/logopic.jpg'%} ">
                 <h1>  <label  class="protest-guerrilla-regular text-lg lg:text-2xl">{{basicInfo.logo}} </label></h1>
             </div>
   
@@ -80,7 +80,7 @@
         <div class="flex  flex-wrap gap-10 lg:w-[95%]   text-rose-900 text-xl protest-guerrilla-regular">
         {% for project in projects %}   
             <div class=" bg-rose-50 w-[95%] lg:w-[25%]  mx-10 py-10 px-5   shadow-xl shadow-red-200">
-                <img class="w-[20%] h-10 rounded-full mx-auto " src="{% static 'portfolioCode/project.png' %}">
+                <img class="w-[20%] h-10 rounded-full mx-auto " src="{% static 'portfolioCode/img/project.png' %}">
                 <h1 class="py-5 ">{{ project.title}}</h1>
                 <p class="sofadi-one-regular text-stone-600">{{project.partOfabout}} </p>
                 
@@ -105,7 +105,7 @@
         {% for article in blogArticles %}
         
         <div class=" bg-rose-50 w-[95%] lg:w-[25%]  mx-10 py-10 px-5   shadow-xl shadow-red-200">
-            <img class="w-[20%] h-10 rounded-full mx-auto " src="{% static 'portfolioCode/blog.png' %}">
+            <img class="w-[20%] h-10 rounded-full mx-auto " src="{% static 'portfolioCode/img/blog.png' %}">
             <h1 class="py-5 ">{{article.title}}</h1>
             <p class="sofadi-one-regular text-stone-600">{{article.partOfarticle}} </p>
             
@@ -140,25 +140,25 @@
             <div >
             <h1 class="protest-guerrilla-regular my-5"> I would be happy to have further communication with you. </h2>
             <paragraph  class="flex  gap-3  my-3">
-                <a href="{{basicInfo.whatsappLink}}"> <img src="{% static 'portfolioCode/whatsapp.png' %}" class="w-7 h-7 rounded"> </a>
+                <a href="{{basicInfo.whatsappLink}}"> <img src="{% static 'portfolioCode/img/whatsapp.png' %}" class="w-7 h-7 rounded"> </a>
                
                 <h3>{{basicInfo.whatsappNo}} </h3>
         
             </paragraph >
             <paragraph  class="flex   gap-3  my-3">
-                <a href="{{basicInfo.telegramLink}}"> <img src="{% static 'portfolioCode/telegram.png' %}" class="w-7 h-7 rounded"> </a>
+                <a href="{{basicInfo.telegramLink}}"> <img src="{% static 'portfolioCode/img/telegram.png' %}" class="w-7 h-7 rounded"> </a>
               
                 <h3>{{basicInfo.telegramName}}</h3>
         
             </paragraph >
             <paragraph   class="flex   gap-3 my-3">
-                <a href="{{basicInfo.linkedInlink}}"> <img src="{% static 'portfolioCode/linkedin.png' %}" class="w-7 h-7 rounded"> </a>
+                <a href="{{basicInfo.linkedInlink}}"> <img src="{% static 'portfolioCode/img/linkedin.png' %}" class="w-7 h-7 rounded"> </a>
                
                 <h3>{{basicInfo.linkedInName}} </h3>
         
             </paragraph >
             <paragraph   class="flex  gap-3  my-3">
-                <a href="{{basicInfo.githubLink}}"> <img src="{% static 'portfolioCode/github.png' %}" class="w-7 h-7 rounded"> </a>
+                <a href="{{basicInfo.githubLink}}"> <img src="{% static 'portfolioCode/img/github.png' %}" class="w-7 h-7 rounded"> </a>
                
                 <h3>{{basicInfo.githubName}} </h3>
         
