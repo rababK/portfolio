@@ -1,0 +1,53 @@
+[
+    {
+        "model": "basicInformation",
+        "pk": 1,
+        "fields": {
+            "logo": "value1",
+            "aboutme": "value2",
+            "whatsappNo":"",
+            "whatsappLink":"",
+            "telegramName":"",
+            "telegramLink":"",
+            "githubName":"",
+            "githubLink":"",
+            "linkedInName":"",
+            "linkedInlink":""
+
+        }
+    },
+    {
+        "model": "skill",
+        "pk": 2,
+        "fields": {
+            "name": "skill name"
+ }
+},
+
+ {
+    "model": "project",
+    "pk": 3,
+    "fields": {
+        "title": "project title",
+        "about":"here is pragraph about the project"
+}
+},
+{
+    "model": "projectSkills",
+    "pk": 3,
+    "fields": {
+        "skill": null,
+        "project":null
+}
+},
+{
+    "model": "blogArticle",
+    "pk": 3,
+    "fields": {
+        "title": "here is the title of the article ",
+        "article":"here is the body of the article "
+}
+}
+
+
+]

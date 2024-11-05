@@ -4,17 +4,27 @@ from .forms import ContactForm
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import JsonResponse
 # Create your views here.
 def index(request):
     basicInfo = models.basicInformation
-    basicInfo = basicInfo.objects.get(id=1)
-     
-
+    
+    if basicInfo is None:
+        return JsonResponse({'message':'no data found '},status=404)
+    else:
+        basicInfo = basicInfo.objects.get(id=1)
     blogArticle = models.blogArticle
-    blogArticles=blogArticle.objects.all()[:3]
+    if blogArticles is None:
+        return JsonResponse({'message':'no data found '},status=404)
+    else:
+        blogArticles=blogArticle.objects.all()[:3]
 
     project = models.project
-    projects = project.objects.all()[:6]
+    if project is None:
+        return JsonResponse({'message':'no data found '},status=404)
+    else:
+    
+        projects = project.objects.all()[:6]
 
 
     context = {
