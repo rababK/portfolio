@@ -1,6 +1,13 @@
 from django.db import models
 from multiselectfield import MultiSelectField
 # Create your models here.
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
+if not User.objects.filter(username="admin").exists():
+    User.objects.create_superuser("admin", "admin@example.com", "yourpassword")
+
+
 
 class basicInformation(models.Model):
     logo=models.CharField(max_length=50,default="rabab KH.")
