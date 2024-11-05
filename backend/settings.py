@@ -2,12 +2,13 @@ from pathlib import Path
 import dj_database_url 
 import os
 BASE_DIR = Path(__file__).resolve().parent.parent
+import dj_database_url
 
 SECRET_KEY="r1r1r1"
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['portfolio-sj5g.onrender.com','127.0.0.1',]
+ALLOWED_HOSTS = ['*']
 
 BASE_URL = 'https://portfolio-sj5g.onrender.com'
 
@@ -87,13 +88,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases  
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
+DATABASES['default'] = dj_database_url.config()
 '''database_url="postgresql://portfolio_database_drlc_user:jplc4SedwQnqCLWYNYUURpv7sT3jxtJY@dpg-crpurlbtq21c73d8dgq0-a.oregon-postgres.render.com/portfolio_database_drlc"
 DATABASES["default"]=dj_database_url.parse(database_url)'''
 
