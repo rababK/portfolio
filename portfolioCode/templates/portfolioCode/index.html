@@ -164,15 +164,35 @@
         
             </paragraph >
             </div>
-             <form class="lg:w-[40%]  py-2 mx-auto  ">
+            <form class="lg:w-[40%] py-2 mx-auto" method="POST" action="{% url 'contact' %}">
                 {% csrf_token %}
-               <input id="name" class=" border-collapse border-2 mb-10 w-[100%] py-2 rounded px-10" placeholder="Enter your name"><br>
-               <input id="email" class=" border-collapse border-2 mb-10 w-[100%] py-2 rounded px-10" placeholder="Enter your Email"><br>
-               <textarea id="message" placeholder="share me your message " class=" border-collapse rounded border-2  px-10 py-100 w-[100%] py-7 resize-none"></textarea>
-               <button class="w-[40%] p-3  rounded-2xl my-3 text-rose-900 border-pink-300 border-2  hover:bg-pink-300 hover:text-white hover:border-white  " type="submit"> Send message</button> 
-        
-           
-             </form>
+                
+                <!-- Name field -->
+                <input type="text" id="name" name="name" value="{{ form.name.value }}" class="border-collapse border-2 mb-10 w-[100%] py-2 rounded px-10" placeholder="Enter your name">
+                {% if form.name.errors %}
+                    <div class="error">{{ form.name.errors }}</div>
+                {% endif %}
+                <br>
+            
+                <!-- Email field -->
+                <input type="email" id="email" name="email" value="{{ form.email.value }}" class="border-collapse border-2 mb-10 w-[100%] py-2 rounded px-10" placeholder="Enter your Email">
+                {% if form.email.errors %}
+                    <div class="error">{{ form.email.errors }}</div>
+                {% endif %}
+                <br>
+            
+                <!-- Message field -->
+                <textarea id="message" name="message" class="border-collapse rounded border-2 px-10 py-100 w-[100%] py-7 resize-none" placeholder="Share your message">{{ form.message.value }}</textarea>
+                {% if form.message.errors %}
+                    <div class="error">{{ form.message.errors }}</div>
+                {% endif %}
+            
+                <!-- Submit button -->
+                <button class="w-[40%] p-3 rounded-2xl my-3 text-rose-900 border-pink-300 border-2 hover:bg-pink-300 hover:text-white hover:border-white" type="submit">
+                    Send message
+                </button>
+            </form>
+            
             </div>
     </footer>
        

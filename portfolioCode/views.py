@@ -9,22 +9,16 @@ from django.http import JsonResponse
 def index(request):
     basicInfo = models.basicInformation
     
-    if basicInfo is None:
-        return JsonResponse({'message':'no data found '},status=404)
-    else:
-        basicInfo = basicInfo.objects.get(id=1)
+   
+    basicInfo = basicInfo.objects.get(id=1)
     blogArticle = models.blogArticle
-    if blogArticles is None:
-        return JsonResponse({'message':'no data found '},status=404)
-    else:
-        blogArticles=blogArticle.objects.all()[:3]
+    
+    blogArticles=blogArticle.objects.all()[:3]
 
     project = models.project
-    if project is None:
-        return JsonResponse({'message':'no data found '},status=404)
-    else:
     
-        projects = project.objects.all()[:6]
+    
+    projects = project.objects.all()[:6]
 
 
     context = {
@@ -71,23 +65,30 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
+          
 
-            send_mail(
-                f'From {name}, Subject: {" from client "}',
-                f'Message: {message}',
-                email,
-                [settings.ADMIN_EMAIL],  # To email
-                fail_silently=False,
-            )
-            return redirect('success')
+            try:
+                send_mail(
+                    f'From {name}, Subject: {" from client "}',
+                    f' the email : {email} \n Message: {message}',
+                    email,
+                    [settings.ADMIN_EMAIL],  # To email
+                    fail_silently=False,
+                )
+               
+                return redirect('index')
+            except Exception as e:
+                print("Error sending email:", e)
+                return HttpResponse(f"Failed to send email: {e}")
+        else:
+            # Return the form with errors back to the template
+            return render(request, 'portfolioCode/index.html', {'form': form})
     else:
         form = ContactForm()
-    return render(request, 'index.html', {'form': form})
+
+    return render(request, 'portfolioCode/index.html', {'form': form})
 
 
-def success(request):
-  return HttpResponse('Success!')
